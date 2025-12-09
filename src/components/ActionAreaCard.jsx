@@ -11,16 +11,21 @@ export default function ActionAreaCard() {
     <Box
       sx={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-        gap: 3,    
-        p: 3,
+        gridTemplateColumns: {
+          xs: '1fr',            
+          sm: 'repeat(2, 1fr)', 
+          md: 'repeat(3, 1fr)', 
+          lg: 'repeat(4, 1fr)', 
+        },
+        gap: 3,
+        p: { xs: 2, md: 3 },
       }}
     >
       {card.map((item, idx) => (
         <Card
           key={idx}
           sx={{
-            height: 400,  
+            height: { xs: 'auto', md: 400 },
             borderRadius: 3,
             overflow: 'hidden',
             boxShadow: '0px 4px 16px rgba(0,0,0,0.12)',
@@ -39,9 +44,9 @@ export default function ActionAreaCard() {
               image={item.rasim}
               alt={item.nomi}
               sx={{
-                height: 200,          
+                height: { xs: 180, sm: 200 },  
                 width: '100%',
-                objectFit: 'cover',       
+                objectFit: 'cover',
                 objectPosition: 'center',
               }}
             />
